@@ -9,5 +9,5 @@ export default function Navbar (){
             <NavbarTop />
             <NavbarBottom />
         </header>
-    )
+    );
 }
