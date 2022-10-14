@@ -1,0 +1,55 @@
+@import "../../../Constants/variables.scss";
+@import "../../../Constants/flex.scss";
+
+.navbar-bottom {
+    @include flex-align-center-row();
+    justify-content: space-between;
+    width: 100%;
+    padding: $spacer $spacer2x;
+    background-color: $colorLight;
+    box-shadow: 2px 10px 15px $colorPrimaryLight;
+    border-radius: 0 0 8px 8px;
+    ul{
+        display: inline-flex;
+        gap: $spacer2x;
+        font-size: $fontSize-m;
+
+        li{
+            a{
+                padding: $spacer1_2;
+                padding-bottom: $spacer;    
+                i {
+                    margin-right: $spacer1_1;
+                }
+
+                &:hover, &.active-nav{
+                    color: $colorPrimary;
+                    transition: .2s linear; 
+                }
+                &.active-nav {
+                    color: $colorPrimary;
+                    transition: .2s linear; 
+                    border-bottom: 3px solid $colorPrimary;
+                }
+            } 
+        }
+    }
+    button {
+        @include flex-center-all-row();
+        gap: $spacer1_2;
+    }
+}
+
+@media screen and (min-width: 917px) {
+    .navbar-bottom {
+        ul {
+            li {
+                a{
+                    i{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

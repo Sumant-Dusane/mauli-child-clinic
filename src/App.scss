@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&family=PT+Sans:wght@400;700&family=Poppins:wght@400;500;700&family=Ubuntu:wght@400;500&display=swap');
+@import './Constants/variables.scss';
+@import './Constants/common-classes.scss';
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-size: $fontSize-m;
+    font-family: $fontFamily-paragraphStyle;
+    background-color: $colorLight;
+    color: $colorDark;
+
+    span{
+        color: $colorPrimary;
+    }
+
+    ul{
+        list-style: none;
+
+        li a{
+            color: $colorDark;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
+
+
+    button.btn-primary{
+        outline: 0;
+        border: 0;
+        @include btn-primary();
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    body{
+        margin: 0;
+    }
+}

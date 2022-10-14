@@ -1,0 +1,36 @@
+@import './variables.scss';
+
+.wrapper {
+    display: block;
+    padding: $spacer4x 0;
+    margin: 0 auto;
+    width: 100%;
+    &:first-of-type{
+        padding: $spacer*9 0;
+    }
+    &:last-of-type {
+        padding-bottom: 0;
+    }
+}
+
+.navbar-sticky {
+    background: #FFFFFF;
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: 0 3px 16px rgb(0 0 0 / 30%);
+}
+
+.btn-primary {
+    cursor: pointer;
+    display: inline-flex;
+    align-self: center;
+    color: white;
+    background-color: $colorPrimary;
+    border-radius: 8px;
+    width: fit-content;
+    padding: $spacer1_2 $spacer;
+    transition: background-color .2s linear;
+
+    &:hover{
+        background-color: $colorPrimaryDark;
+    }
+}

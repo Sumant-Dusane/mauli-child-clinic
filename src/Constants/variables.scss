@@ -1,0 +1,56 @@
+$spacer: 1rem;                      // 16px
+$spacer1: $spacer * 0.125;         // 2px
+$spacer1_1: $spacer * 0.25;       // 4px
+$spacer1_2: $spacer * 0.5;       // 8px
+$spacer2x: $spacer * 2;         //32px
+$spacer4x: $spacer * 4;         //64px
+$spacer5x: $spacer * 5;         //80px
+$spacer16x: $spacer * 16;         //128px
+
+$fontFamily-title: 'Kanit', 'Poppins', '-apple-system', sans-serif; 
+$fontFamily-subTitle: 'Ubuntu', '-apple-system', sans-serif;
+$fontFamily-paragraphStyle: 'PT Sans', '-apple-system', sans-serif;
+
+$fontSize-m: 1rem;                  //16px
+$fontSize-lg: $fontSize-m * 1.25;   //20px
+$fontSize-ls: $fontSize-m * 1.5;   //24px
+$fontSize-l: $fontSize-m * 2;       //32px
+$fontSize-xl: $fontSize-m * 3;      //48px
+$fontSize-xxl: $fontSize-m * 4;     //64px
+$fontSize-ms: $fontSize-m * 0.875;  //14px
+$fontSize-s: $fontSize-m * 0.5;     //8px
+
+$white: #FFFFFF;
+$colorLight: #ECF1F6;
+$colorDark: #31353D;
+$colorDarkVariant: #9E9EA3;
+$colorPrimary: #1581ec;
+$colorPrimaryDark: #1848B4;
+$colorPrimaryLight: #ABCDF4;
+$colorPrimaryLightVariant: #5A92CC;
+$colorBrand: rgb(12, 196, 119);
+$boxShadow: 2px 10px 15px $colorDarkVariant;
+
+@mixin btn-primary {
+    cursor: pointer;
+    display: inline-flex;
+    align-self: center;
+    color: white;
+    background-color: $colorPrimary;
+    border-radius: 8px;
+    width: fit-content;
+    padding: $spacer1_2 $spacer;
+    transition: background-color .2s linear;
+
+    &:hover{
+        background-color: $colorPrimaryDark;
+    }
+}
+
+@mixin chips-pointer($bg-color) {
+    color: $colorPrimary;
+    padding: $spacer1_2;
+    border-radius: 8px;
+    background-color: $bg-color;
+    margin-right: $spacer1_2;
+}

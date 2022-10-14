@@ -1,0 +1,82 @@
+@import './../../../Constants/variables.scss';
+@import './../../../Constants/flex.scss';
+
+.hero {
+    background: url('https://wallpaperaccess.com/full/1282794.jpg') no-repeat center;
+    background-size: cover;
+    backdrop-filter: blur(15px);
+    height: calc(100vh - 140px);
+    min-height: 500px;
+    &::before{
+        background:linear-gradient(90deg,rgba(10,208,244,.12) 7.19%,rgba(255,255,255,0) 104.33%);
+    }
+}
+.banner {
+    @include flex-column();
+    gap: $spacer2x;
+    padding: $spacer2x 0;
+    &-text{
+        @include flex-row();
+        align-items: flex-end;
+        margin: 0 $spacer4x;
+        
+        &--tagline{
+            font-size: $fontSize-xl;
+            font-family: $fontFamily-subTitle;
+            font-weight: 500;
+        }
+        &--description {
+            margin: 0 auto;
+        }
+    }
+    &-points{
+        @include flex-align-center-row();
+        justify-content: space-evenly;
+        padding: $spacer4x 0;
+        &--pointer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-weight: 700;
+            line-height: 2;
+
+            ul.advantages{
+                cursor: pointer;
+                @include flex-column();
+                justify-content: center;
+                gap: $spacer;
+                margin-top: $spacer;
+                i{
+                    @include chips-pointer(darken($colorLight, 8));
+                }
+            }
+            
+        }
+
+        &-image{
+            display: block;
+            position: relative;
+            background: url('./../../../assets/banner.jpeg');
+            padding: $spacer;
+            min-height: 450px;
+            min-width: 800px;
+            box-shadow: 15px -15px  $colorPrimaryLight;
+            &::after{
+                content: "Mauli children hospital & Aesthetic Dental clinic, Shop no 30/31, 1st floor,  Amarante Chs,  sector 9E , near D mart, kalamboli Raigad";
+                position: absolute;
+                display: block;
+                bottom: -20px;
+                width: 30%;
+                right: 0;
+                color: white;
+                border-radius: 8px;
+                border-top-left-radius: 0px;
+                background: $colorPrimary;
+                padding: $spacer $spacer1_2;
+                font-size: $fontSize-ms;
+                font-weight: bold;
+            }
+        }
+        
+    }
+}

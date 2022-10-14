@@ -1,0 +1,36 @@
+@import "../../../Constants/variables.scss";
+@import "../../../Constants/flex.scss";
+
+.navbar-top{
+    @include flex-align-center-row();
+    justify-content: space-between;
+    width: 100%;
+    padding: $spacer1_2 $spacer4x;
+    img{
+        cursor: pointer;
+        max-height: 70px;
+    }
+    .nav-contact {
+        display: inline-flex;
+        gap: $spacer;
+    
+        &__call, &__timing, &__location {
+            display: grid;
+            grid-template-areas: 'icon head' 'icon desc';
+            &--icon{
+                @include chips-pointer($colorPrimaryLight);
+                grid-area: icon;
+                display: flex;
+                align-self: center;
+                font-size: $fontSize-ls;
+                padding: $spacer1_2;
+            }
+            &--title{
+                grid-area: head;
+            }
+            &--desc{
+                grid-area: desc;
+            }
+        }
+    }
+}
