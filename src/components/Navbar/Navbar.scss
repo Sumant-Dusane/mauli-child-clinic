@@ -6,8 +6,40 @@
     top: 0;
     left: 0;
     right: 0;
-    @include flex-center-all-column();
+    @include flex-align-center-column();
     justify-content: space-between;
     background-color: $white;
     z-index: 999;
+}
+
+@media screen and (max-width: 768px){
+    .navbar-container {
+        top: initial;
+        bottom: -100%;
+        padding: $spacer1_2;
+        padding-bottom: $spacer;
+        border-radius: 8px 8px 0 0;
+        width: 100%;
+        box-shadow: 0px -4px 6px 0 #abcdf4;
+        transition: .3s;
+    }
+    .navbar-show{
+        bottom: 0;
+    }
+    .toggle-navbar {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 1060;
+        padding: $spacer;
+        font-size: $fontSize-ls;
+        color: $colorDark;
+        background-color: $white;
+        border-radius: 50%;
+        transition: .3s;
+
+        &.uil-times{
+            background-color: transparent;
+        }
+    }
 }

@@ -25,41 +25,35 @@ export default function NavbarBottom(){
         // eslint-disable-next-line
         [document.getElementById("navs"), document.getElementById("nav-tabs")],
     );
+    const isMobileTemp = window.innerWidth <= 768 ? true : false;
 
     return (
         <>
         <div className='navbar-bottom'>
-            <ul className='navbar-bottom--navs' id="navs">
-                <li>
-                    <a href="#home" className='nav-tabs active-nav'>
+            <div className='navbar-bottom--navs' id="navs" tabIndex="-1">
+                <a href="#home" className='nav-tabs active-nav' tabIndex="-1">
                         <i className='uil uil-estate'></i>Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#services" className='nav-tabs'>
+                </a>
+                <a href="#services" className='nav-tabs' tabIndex="-1">
                         <i className='uil uil-stethoscope'></i>Services
-                    </a>
-                </li>
-                <li>
-                    <a href="#testimonials" className='nav-tabs'>
+                </a>
+                <a href="#testimonials" className='nav-tabs' tabIndex="-1">
                         <i className='uil uil-thumbs-up'></i>Testimonials
-                    </a>
-                </li>
-                <li>
-                    <a href="#about" className='nav-tabs'>
+                </a>
+                <a href="#about" className='nav-tabs' tabIndex="-1">
                         <i className='uil uil-user-md'></i>About
-                    </a>
-                </li>
-                <li>
-                    <a href="#reach-out" className='nav-tabs'>
+                </a>
+                <a href="#reach-out" className='nav-tabs' tabIndex="-1">
                         <i className='uil uil-hospital-square-sign'></i>Reach Out
-                    </a>
-                </li>
-            </ul>
-            <button className='btn-primary'>
+                </a>
+                {isMobileTemp ? <a href="#reach-out" className='nav-tabs' tabIndex="-1">
+                        <i className='uil uil-phone'></i>Contact
+                </a> : null}
+            </div>
+            {!isMobileTemp ? <button className='btn-primary'>
                 <i className="fas fa-phone"></i>
                 CONTACT
-            </button>
+            </button> : null}
         </div>
         </>
     );

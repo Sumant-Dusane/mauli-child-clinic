@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 
@@ -22,11 +23,13 @@ body{
 
     ul{
         list-style: none;
-
-        li a{
-            color: $colorDark;
-            cursor: pointer;
-            text-decoration: none;
+    }
+    a{
+        color: $colorDark;
+        cursor: pointer;
+        text-decoration: none;
+        &:focus, &:focus-visible {
+            outline: 0;
         }
     }
 

@@ -3,25 +3,32 @@
 
 .navbar-bottom {
     @include flex-align-center-row();
-    justify-content: space-between;
-    width: 100%;
-    padding: $spacer $spacer2x;
-    background-color: $colorLight;
-    box-shadow: 2px 10px 15px $colorPrimaryLight;
     border-radius: 0 0 8px 8px;
-    ul{
-        display: inline-flex;
-        gap: $spacer2x;
-        font-size: $fontSize-m;
+    button {
+        @include flex-center-all-row();
+        gap: $spacer1_2;
+    }
+}
 
-        li{
+// web
+@media screen and (min-width: 769px) {
+    .navbar-bottom {
+        justify-content: space-between;
+        width: 100%;
+        padding: $spacer $spacer2x;
+        background-color: $colorLight;
+        box-shadow: 2px 3px 4px $colorPrimaryLight;
+        &--navs {
+            max-height: 45px;
+            display: inline-flex;
+            gap: $spacer2x;    
             a{
                 padding: $spacer1_2;
-                padding-bottom: $spacer;    
+                padding-bottom: $spacer;        
                 i {
-                    margin-right: $spacer1_1;
+                    display: none;
                 }
-
+    
                 &:hover, &.active-nav{
                     color: $colorPrimary;
                     transition: .2s linear; 
@@ -31,23 +38,35 @@
                     transition: .2s linear; 
                     border-bottom: 3px solid $colorPrimary;
                 }
-            } 
+            }
         }
-    }
-    button {
-        @include flex-center-all-row();
-        gap: $spacer1_2;
     }
 }
 
-@media screen and (min-width: 917px) {
-    .navbar-bottom {
-        ul {
-            li {
-                a{
-                    i{
-                        display: none;
-                    }
+// mweb
+@media screen and (max-width: 768px) {
+    .navbar-bottom{
+        width: 100%;
+        justify-content: stretch;
+        &--navs {
+            display: grid;
+            gap: 1rem;                     
+            grid-template-columns: repeat(3,1fr);
+            align-items: center;
+            justify-content: center;
+            justify-items: stretch;
+            width: 100%;
+            padding: 0 2rem;
+            a{
+                @include flex-center-all-column();
+                text-align: center;
+                padding: $spacer1_2;     
+                i {
+                    margin-right: $spacer1_1;
+                }
+                &.active-nav {
+                    color: $colorPrimary;
+                    transition: .2s linear;
                 }
             }
         }

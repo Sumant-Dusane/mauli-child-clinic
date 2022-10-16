@@ -1,0 +1,117 @@
+@import './../../../../Constants/variables.scss';
+@import './../../../../Constants/flex.scss';
+
+.banner {
+    @include flex-column();
+    gap: $spacer2x;
+    &-text{
+        &--tagline{ 
+            font-family: $fontFamily-subTitle;
+            font-weight: 500;
+        }
+        &--description {
+            margin: 0 auto;
+        }
+    }
+    &-points{
+        justify-content: space-evenly;
+        &--pointer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-weight: 700;
+            line-height: 2;
+
+            ul.advantages{
+                cursor: pointer;
+                @include flex-column();
+                justify-content: center;
+                gap: $spacer;
+                margin-top: $spacer;
+                i{
+                    @include chips-pointer(rgb(21 129 236 / 5%));
+                }
+            }
+            
+        }
+
+        &-image{
+            display: block;
+            position: relative;
+            background: url('./../../../../assets/banner.jpeg') no-repeat center;
+            padding: $spacer;
+            min-height: 450px;
+            &::after{
+                content: "Mauli children hospital & Aesthetic Dental clinic, Shop no 30/31, 1st floor,  Amarante Chs,  sector 9E , near D mart, kalamboli Raigad";
+                position: absolute;
+                display: block;
+                bottom: -20px;
+                right: 0;
+                color: white;
+                border-radius: 8px;
+                border-top-left-radius: 0px;
+                background: $colorPrimary;
+                padding: $spacer $spacer1_2;
+                font-weight: bold;
+            }
+        }
+        
+    }
+}
+
+@media screen and (min-width: 769px){
+    .banner {
+        padding: $spacer2x 0;
+        &-text{
+            @include flex-row();
+            align-items: flex-end;
+            margin: 0 $spacer4x;
+            &--tagline {
+                font-size: $fontSize-xl;
+            }
+        }
+        &-points {
+            @include flex-align-center-row();
+            padding: $spacer4x 0;
+            &-image {
+                min-width: 800px;
+                box-shadow: 15px -15px  $colorPrimaryLight;
+                &::after {
+                    width: 30%;
+                    font-size: $fontSize-ms;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .banner {
+        padding: 0;
+        &-text{
+            @include flex-center-all-column();
+            margin: 0;
+            text-align: center;
+            gap: $spacer1_2;
+            &--tagline {
+                font-size: $spacer2x;
+            }
+        }
+        &-points {
+            @include flex-align-center-column();
+            gap: $spacer2x;
+            padding: 0;
+            &-image {
+                min-width: calc(100vw - 100px);
+                background-size: cover;
+                box-shadow: none;
+
+                &::after {
+                    font-size: 12px;
+                    height: fit-content;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -18,7 +18,7 @@
             display: grid;
             grid-template-areas: 'icon head' 'icon desc';
             &--icon{
-                @include chips-pointer($colorPrimaryLight);
+                @include chips-pointer(rgb(21 129 236 / 5%));
                 grid-area: icon;
                 display: flex;
                 align-self: center;
@@ -32,5 +32,11 @@
                 grid-area: desc;
             }
         }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .navbar-top {
+        display: none;
     }
 }

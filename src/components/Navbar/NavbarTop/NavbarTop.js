@@ -5,7 +5,7 @@ export default function NavbarTop() {
   return (
     <>
       <div className='navbar-top'>  
-        <a href="/"><img src="https://seeklogo.com/images/C/children-s-hospital-colorado-logo-773C59661E-seeklogo.com.png" alt="Mauli Child Care " loading="lazy"/></a>
+        <a href="/" tabIndex="-1"><img src="https://seeklogo.com/images/C/children-s-hospital-colorado-logo-773C59661E-seeklogo.com.png" alt="Mauli Child Care " loading="lazy"/></a>
         <div className='nav-contact'>
           <div className='nav-contact__call'>
             <i className="nav-contact__call--icon uil uil-calling"></i>

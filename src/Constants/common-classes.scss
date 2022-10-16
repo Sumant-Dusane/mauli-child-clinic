@@ -2,14 +2,21 @@
 
 .wrapper {
     display: block;
-    padding: $spacer4x 0;
+    padding: $spacer2x 0;
     margin: 0 auto;
     width: 100%;
-    &:first-of-type{
-        padding: $spacer*9 0;
-    }
     &:last-of-type {
         padding-bottom: 0;
+    }
+    @media screen and (min-width: 769px){
+        &:first-of-type {
+            padding-top: $spacer*10;
+        }   
+    }
+    @media screen and (max-width: 768px){
+        &:first-of-type {
+            padding-top: 0;
+        }   
     }
 }
 

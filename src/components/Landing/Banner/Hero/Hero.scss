@@ -1,0 +1,116 @@
+@import './../../../../Constants/variables.scss';
+@import './../../../../Constants/flex.scss';
+
+.hero {
+    position: relative;
+    height: 60vh;
+    display: grid;
+    padding: 0 $spacer;
+    background: url('https://img.freepik.com/free-photo/blur-hospital_1203-7972.jpg?w=2000') no-repeat center;
+    background-size: cover;
+    color: $white;
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, rgba(0, 127, 155, 0.328) 7.19%, rgba(255, 255, 255, 0) 104.33%);
+    }
+    &__left-content{
+        position: relative;
+        @include flex-column();
+        justify-content: center;
+    }
+    &__right-content {
+        &::after{
+            position: absolute;
+            content: "";
+            background: url('https://www.freepnglogos.com/uploads/doctor-png/doctor-bulk-billing-doctors-chapel-hill-health-care-medical-3.png') no-repeat center bottom;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+}
+
+.hero-pitches {
+    display: grid;
+    position: relative;
+    grid-column-gap: $spacer1_1;
+    justify-items: center;
+     &__pitch{
+        @include flex-center-all-column();
+        padding: $spacer2x $spacer;
+        width: fit-content;
+        color: $white;
+        border-radius: 8px;
+        &:nth-child(1){
+            background-color: $colorPrimary;
+        }
+        &:nth-child(2){
+            background-color: $colorBrand;
+        }
+        &:nth-child(3){
+            background-color: teal;
+        }
+        &--title{
+            font-size: $fontSize-lg;
+        }
+     }
+}
+
+@media screen and (min-width: 769px){
+    .hero {
+        grid-template-columns: repeat(2, 1fr);
+        &__left-content {
+            margin-left: $spacer2x;
+            &--title{
+                font-size: $fontSize-l*2;
+            }
+        }
+        &__right-content {
+            position: relative;
+            &::after{
+                transform: scale(.9);
+                bottom: -$spacer4x;
+                left: 270px;
+            }
+        }
+    }
+    .hero-pitches {
+        grid-template-columns: repeat(3,1fr);
+        margin-top: -$spacer*3;
+    }
+}
+@media screen and (max-width: 768px){
+    .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content;
+        &__left-content {
+            align-items: center;
+            text-align: center;
+            &--title{
+                font-size: $fontSize-l;
+            }
+        }
+        &__right-content {
+            position: unset;
+            &::after{
+                transform: scale(.75);
+                bottom: -180px;
+            }
+        }
+    }
+    .hero-pitches {
+        grid-template-columns: 1fr;
+        grid-row-gap: $spacer1_2;
+        margin-top: -$spacer2x;
+        &__pitch {
+            width: calc(100% - $spacer);
+            text-align: center;
+            padding: $spacer $spacer1_2;
+        }
+    }
+}
