@@ -36,11 +36,10 @@
         }
 
         &-image{
-            display: block;
             position: relative;
+            background-size: contain;
             background: url('./../../../../assets/banner.jpeg') no-repeat center;
-            padding: $spacer;
-            min-height: 450px;
+            height: auto;
             &::after{
                 content: "Mauli children hospital & Aesthetic Dental clinic, Shop no 30/31, 1st floor,  Amarante Chs,  sector 9E , near D mart, kalamboli Raigad";
                 position: absolute;
@@ -76,6 +75,7 @@
             &-image {
                 min-width: 800px;
                 box-shadow: 15px -15px  $colorPrimaryLight;
+                padding-bottom: 30%;
                 &::after {
                     width: 30%;
                     font-size: $fontSize-ms;
@@ -102,14 +102,13 @@
             gap: $spacer2x;
             padding: 0;
             &-image {
-                min-width: calc(100vw - 100px);
+                min-width: calc(100vw - $spacer);
                 background-size: cover;
                 box-shadow: none;
 
                 &::after {
                     font-size: 12px;
-                    height: fit-content;
-                    width: 100%;
+                    padding-bottom: 56.25%;
                 }
             }
         }
