@@ -1,5 +1,4 @@
-@import './../../../../Constants/variables.scss';
-@import './../../../../Constants/flex.scss';
+@import './../../../../Constants/constants.scss';
 
 .hero {
     position: relative;
@@ -24,14 +23,7 @@
         justify-content: center;
     }
     &__right-content {
-        &::after{
-            position: absolute;
-            content: "";
-            background: url('https://www.freepnglogos.com/uploads/doctor-png/doctor-bulk-billing-doctors-chapel-hill-health-care-medical-3.png') no-repeat center bottom;
-            top: 0;
-            left: 0;
-            right: 0;
-        }
+        position: relative;
     }
 }
 
@@ -55,10 +47,7 @@
         &:nth-child(3){
             background-color: teal;
         }
-        &--title{
-            font-size: $fontSize-lg;
-        }
-     }
+    }
 }
 
 @media screen and (min-width: 769px){
@@ -66,13 +55,15 @@
         grid-template-columns: repeat(2, 1fr);
         &__left-content {
             margin-left: $spacer2x;
-            &--title{
-                font-size: $fontSize-l*2;
-            }
         }
         &__right-content {
-            position: relative;
             &::after{
+                position: absolute;
+                content: "";
+                background: url('https://www.freepnglogos.com/uploads/doctor-png/doctor-bulk-billing-doctors-chapel-hill-health-care-medical-3.png') no-repeat center bottom;
+                top: 0;
+                left: 0;
+                right: 0;
                 transform: scale(.9);
                 bottom: -$spacer4x;
                 left: 270px;
@@ -88,19 +79,15 @@
     .hero {
         grid-template-columns: 1fr;
         grid-template-rows: max-content;
+        grid-row-gap: $spacer2x;
         &__left-content {
             align-items: center;
             text-align: center;
-            &--title{
-                font-size: $fontSize-l;
-            }
         }
         &__right-content {
-            position: unset;
-            &::after{
-                transform: scale(.75);
-                bottom: -180px;
-            }
+            background: url('https://www.freepnglogos.com/uploads/doctor-png/doctor-bulk-billing-doctors-chapel-hill-health-care-medical-3.png') no-repeat center bottom;
+            height: 100%;
+            background-size: contain;
         }
     }
     .hero-pitches {
@@ -110,7 +97,13 @@
         &__pitch {
             width: calc(100% - $spacer);
             text-align: center;
-            padding: $spacer $spacer1_2;
+            padding: $spacer1_2 0;
+
+            & > div {
+                font-size: $fontSize-ms;
+                width: 50%;
+                text-align: center;
+            }
         }
     }
 }

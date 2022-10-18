@@ -1,5 +1,4 @@
-@import "../../../Constants/variables.scss";
-@import "../../../Constants/flex.scss";
+@import "../../../Constants/constants.scss";
 
 .navbar-top{
     @include flex-align-center-row();
@@ -27,6 +26,7 @@
             }
             &--title{
                 grid-area: head;
+                font-weight: $fontFamily-subTitle;
             }
             &--desc{
                 grid-area: desc;

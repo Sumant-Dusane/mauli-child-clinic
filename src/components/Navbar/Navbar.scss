@@ -1,5 +1,4 @@
-@import "../../Constants/variables.scss";
-@import "../../Constants/flex.scss";
+@import "../../Constants/constants.scss";
 
 .navbar-container {
     position: fixed;
@@ -28,6 +27,7 @@
     }
     .toggle-navbar {
         position: fixed;
+        @include flex-center-all-row();
         bottom: 0;
         right: 0;
         z-index: 1060;
@@ -36,10 +36,14 @@
         color: $colorDark;
         background-color: $white;
         border-radius: 50%;
+        height: 65px;
+        width: 65px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.109);
         transition: .3s;
 
         &.uil-times{
             background-color: transparent;
+            box-shadow: none;
         }
     }
 }

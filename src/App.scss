@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&family=PT+Sans:wght@400;700&family=Poppins:wght@400;500;700&family=Ubuntu:wght@400;500&display=swap');
-@import './Constants/variables.scss';
-@import './Constants/common-classes.scss';
-
+@import './Constants/constants.scss';
 
 *{
     margin: 0;
@@ -9,7 +7,6 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-
 
 body{
     font-size: $fontSize-m;
@@ -41,9 +38,33 @@ body{
     }
 }
 
+.wrapper--title {
+    @include flex-center-all-row();
+    font-size: $fontSize-l;
+    font-weight: bold;
+    position: relative;
+    &::before, &::after {
+        content: "";
+        height: 3px;
+        border-radius: 8px;
+        background-color: $colorPrimary;
+        width: 20%;
+        margin: $spacer;
+    }
+}
+
+.wrapper:nth-child(odd){
+    background-color: darken($color: $colorLight, $amount: 3);
+}
 
 @media screen and (max-width: 768px) {
     body{
         margin: 0;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .wrapper--title {
+        font-size: $fontSize-ls;
     }
 }

@@ -6,7 +6,7 @@ function Banner(){
     return (
         <>
         <Hero />
-        {/* <BannerPitch /> */}
+        <BannerPitch />
         </>
     )
 }

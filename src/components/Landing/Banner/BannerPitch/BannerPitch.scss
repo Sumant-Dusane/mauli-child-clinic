@@ -1,8 +1,8 @@
-@import './../../../../Constants/variables.scss';
-@import './../../../../Constants/flex.scss';
+@import './../../../../Constants/constants.scss';
 
 .banner {
     @include flex-column();
+    margin-top: $spacer;
     gap: $spacer2x;
     &-text{
         &--tagline{ 
@@ -102,13 +102,16 @@
             gap: $spacer2x;
             padding: 0;
             &-image {
-                min-width: calc(100vw - $spacer);
+                min-width: calc(100vw - $spacer4x);
+                height: 0;
+                border-radius: 8px;
+                padding-bottom: 56.25%;
                 background-size: cover;
                 box-shadow: none;
 
                 &::after {
-                    font-size: 12px;
-                    padding-bottom: 56.25%;
+                    content: "";
+                    background: none;
                 }
             }
         }

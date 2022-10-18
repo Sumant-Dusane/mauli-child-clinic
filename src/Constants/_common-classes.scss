@@ -2,11 +2,11 @@
 
 .wrapper {
     display: block;
-    padding: $spacer2x 0;
+    padding-top: $spacer2x;
     margin: 0 auto;
     width: 100%;
     &:last-of-type {
-        padding-bottom: 0;
+        padding-bottom: $spacer4x;
     }
     @media screen and (min-width: 769px){
         &:first-of-type {
@@ -39,5 +39,30 @@
 
     &:hover{
         background-color: $colorPrimaryDark;
+    }
+}
+
+.title {
+    font-size: $fontSize-l;
+    font-family: $fontFamily-subTitle;
+    font-weight: bold;
+    @media screen and (max-width: 768px){
+        &{
+            font-size: $fontSize-lg;
+        }
+    }
+}
+
+.arrow-right{
+    &::after {
+        display: inline-block;
+        padding-left: 8px;
+        content: "\0279E"; // arrow right unicode
+        transition: transform 0.3s ease-out;
+    }
+    &:hover {
+        &::after {
+            transform: translateX(4px);
+        }
     }
 }

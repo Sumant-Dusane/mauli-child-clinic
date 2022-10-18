@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar/Navbar';
 import Banner from './components/Landing/Banner/Banner';
 import './App.scss'
-import BannerPitch from './components/Landing/Banner/BannerPitch/BannerPitch';
+import Services from './components/Landing/Services/Services';
 
 
 export default function App() {
@@ -11,8 +11,9 @@ export default function App() {
       <div className='wrapper' id='home'>
         <Banner />
       </div>
-      <div className='wrapper' id='home'>
-        <BannerPitch />
+      <div className='wrapper' id='services'>
+        <span className='wrapper--title'>Our Services</span>
+        <Services />
       </div>
     </>
 

@@ -1,5 +1,4 @@
-@import "../../../Constants/variables.scss";
-@import "../../../Constants/flex.scss";
+@import "../../../Constants/constants.scss";
 
 .navbar-bottom {
     @include flex-align-center-row();
@@ -7,6 +6,10 @@
     button {
         @include flex-center-all-row();
         gap: $spacer1_2;
+    }
+
+    &--sticky {
+        box-shadow: 0 10px 15px #abcdf4;
     }
 }
 
@@ -17,7 +20,6 @@
         width: 100%;
         padding: $spacer $spacer2x;
         background-color: $colorLight;
-        box-shadow: 2px 3px 4px $colorPrimaryLight;
         &--navs {
             max-height: 45px;
             display: inline-flex;
