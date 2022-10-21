@@ -30,10 +30,15 @@ body{
         }
     }
 
-
-    button.btn-primary{
+    button {
         outline: 0;
         border: 0;
+        font-size: $fontSize-m;
+        cursor: pointer;
+        background: none;
+    }
+
+    button.btn-primary{
         @include btn-primary();
     }
 }

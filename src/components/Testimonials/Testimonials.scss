@@ -1,0 +1,68 @@
+@import "../../Constants/constants.scss";
+
+.testimonials-carousel {
+    @include flex-center-all-column();
+    gap: $spacer;
+}
+
+.testimonials{
+    @include flex-center-all-row();
+    gap: $spacer2x;
+    &__testimonial {
+        @include flex-center-all-column();
+        width: 25%;
+        &--header {
+            height: 250px;
+            background-image: transparent;
+            img {
+                max-height: 250px;
+                width: auto;
+            }
+        }
+        &--body {
+            @include flex-center-all-column();
+            text-align: center;
+            gap: $spacer;
+            padding: $spacer;
+            background-color: $white;
+            border-radius: 8px;
+            box-shadow: -6px -3px 9px 0px rgb(0 0 0 / 10%);
+
+            p.desc {
+                @include line-clamp(7);
+                background-color: $colorLight;
+                border-radius: 4px;
+                text-align: justify;
+            }
+
+            .rating {
+                @include flex-align-center-row();
+                gap: $spacer1_2;
+                padding: $spacer $spacer2x;
+                margin-top: $spacer;
+                width: fit-content;
+                border-top: 1px solid rgba(0, 0, 0, .35);
+
+                span {
+                    color: $colorDark;
+
+                    &.rated {
+                        color: rgb(255, 221, 31);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.indicator {
+    @include flex-center-all-row();
+    gap: $spacer1_2;
+    span {
+        cursor: pointer;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: $colorPrimary;
+    }
+}

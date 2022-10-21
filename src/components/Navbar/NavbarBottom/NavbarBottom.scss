@@ -21,10 +21,10 @@
         padding: $spacer $spacer2x;
         background-color: $colorLight;
         &--navs {
-            max-height: 45px;
+            max-height: 40px;
             display: inline-flex;
             gap: $spacer2x;    
-            a{
+            button{
                 padding: $spacer1_2;
                 padding-bottom: $spacer;        
                 i {
@@ -59,7 +59,7 @@
             justify-items: stretch;
             width: 100%;
             padding: 0 2rem;
-            a{
+            button{
                 @include flex-center-all-column();
                 text-align: center;
                 padding: $spacer1_2;     

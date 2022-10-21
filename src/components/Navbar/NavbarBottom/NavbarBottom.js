@@ -30,25 +30,25 @@ export default function NavbarBottom(){
     return (
         <>
         <div className='navbar-bottom'>
-            <div className='navbar-bottom--navs' id="navs" tabIndex="-1">
-                <a href="#home" className='nav-tabs active-nav' tabIndex="-1">
-                        <i className='uil uil-estate'></i>Home
-                </a>
-                <a href="#services" className='nav-tabs' tabIndex="-1">
-                        <i className='uil uil-stethoscope'></i>Services
-                </a>
-                <a href="#testimonials" className='nav-tabs' tabIndex="-1">
-                        <i className='uil uil-thumbs-up'></i>Testimonials
-                </a>
-                <a href="#about" className='nav-tabs' tabIndex="-1">
-                        <i className='uil uil-user-md'></i>About
-                </a>
-                <a href="#reach-out" className='nav-tabs' tabIndex="-1">
-                        <i className='uil uil-hospital-square-sign'></i>Reach Out
-                </a>
-                {isMobileTemp ? <a href="#reach-out" className='nav-tabs' tabIndex="-1">
-                        <i className='uil uil-phone'></i>Contact
-                </a> : null}
+            <div className='navbar-bottom--navs' id='navs' tabIndex="-1">
+                <button type='submit' className='nav-tabs active-nav' tabIndex="=1">
+                    <i className='uil uil-estate'></i>Home
+                </button>
+                <button type='submit' className='nav-tabs' tabIndex="=1">
+                    <i className='uil uil-estate'></i>Services
+                </button>
+                <button type='submit' className='nav-tabs' tabIndex="=1">
+                    <i className='uil uil-estate'></i>Testimonials
+                </button>
+                <button type='submit' className='nav-tabs' tabIndex="=1">
+                    <i className='uil uil-estate'></i>About
+                </button>
+                <button type='submit' className='nav-tabs' tabIndex="=1">
+                    <i className='uil uil-estate'></i>Reach Out
+                </button>
+                {isMobileTemp ? <button type='submit' className='nav-tabs' tabIndex="-1">
+                    <i className='uil uil-phone'></i>Contact
+                </button> : null}
             </div>
             {!isMobileTemp ? <button className='btn-primary'>
                 <i className="fas fa-phone"></i>

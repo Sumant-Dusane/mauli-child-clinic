@@ -30,27 +30,3 @@ $colorPrimaryLight: #ABCDF4;
 $colorPrimaryLightVariant: #5A92CC;
 $colorBrand: rgb(12, 196, 119);
 $boxShadow: 2px 10px 15px $colorDarkVariant;
-
-@mixin btn-primary {
-    cursor: pointer;
-    display: inline-flex;
-    align-self: center;
-    color: white;
-    background-color: $colorPrimary;
-    border-radius: 8px;
-    width: fit-content;
-    padding: $spacer1_2 $spacer;
-    transition: background-color .2s linear;
-
-    &:hover{
-        background-color: $colorPrimaryDark;
-    }
-}
-
-@mixin chips-pointer($bg-color) {
-    color: $colorPrimary;
-    padding: $spacer1_2;
-    border-radius: 8px;
-    background-color: $bg-color;
-    margin-right: $spacer1_2;
-}

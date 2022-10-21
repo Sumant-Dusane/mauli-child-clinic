@@ -1,0 +1,35 @@
+@mixin btn-primary {
+    cursor: pointer;
+    display: inline-flex;
+    align-self: center;
+    color: white;
+    background-color: $colorPrimary;
+    border-radius: 8px;
+    width: fit-content;
+    padding: $spacer1_2 $spacer;
+    transition: background-color .2s linear;
+
+    &:hover{
+        background-color: $colorPrimaryDark;
+    }
+}
+
+@mixin chips-pointer($bg-color) {
+    color: $colorPrimary;
+    padding: $spacer1_2;
+    border-radius: 8px;
+    background-color: $bg-color;
+    margin-right: $spacer1_2;
+}
+
+
+@mixin line-clamp($numLines) {
+    overflow: hidden;
+    text-overflow: -o-ellipsis-lastline;
+    text-overflow: ellipsis;
+    display: block;
+    display: -webkit-box;
+    line-clamp: $numLines;
+    -webkit-line-clamp: $numLines;
+    -webkit-box-orient: vertical;
+}

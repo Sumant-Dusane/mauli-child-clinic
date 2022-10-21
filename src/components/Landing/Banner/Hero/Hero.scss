@@ -38,15 +38,7 @@
         width: fit-content;
         color: $white;
         border-radius: 8px;
-        &:nth-child(1){
-            background-color: $colorPrimary;
-        }
-        &:nth-child(2){
-            background-color: $colorBrand;
-        }
-        &:nth-child(3){
-            background-color: teal;
-        }
+        background: linear-gradient(45deg, #1fa2c3, #29ddf3);
     }
 }
 
