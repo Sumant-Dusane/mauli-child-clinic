@@ -1,0 +1,82 @@
+@import "./../../Constants/constants.scss";
+
+.about-us {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    padding: $spacer;
+    row-gap: $spacer;
+
+    img {
+        grid-area: photo;
+        border-radius: 8px;
+    }
+
+    p {
+        grid-area: desc;
+    }
+
+    &__education {
+        grid-area: pointer;
+        span {
+            font-weight: bold;
+        }
+        ul li .fa-star {
+            margin-right: $spacer1_2;
+        }
+    }
+}
+
+.view-btn {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 769px){
+    .about-us {
+        grid-template-areas: "photo desc" "photo pointer";
+        margin: 0 $spacer4x;
+
+        img {
+            max-height: 500px;
+            margin-right: $spacer2x;
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .about-us {
+        grid-template-areas: "desc desc" "photo pointer";
+
+        img {
+            max-height: 400px;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        &__education ul li, &__education span{
+            line-height: 2.4;
+        }
+    }
+}
+
+@media screen and (max-width: 425px){
+    .about-us {
+        grid-template-areas: "photo photo" "desc desc" "pointer pointer";
+        row-gap: $spacer;
+
+        img {
+            max-height: 400px;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        &__education ul li, &__education span{
+            line-height: 2.4;
+        }
+    }
+}

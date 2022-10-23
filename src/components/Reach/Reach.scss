@@ -1,0 +1,82 @@
+@import "../../Constants/constants.scss";
+
+.reach-out {
+    display: grid;
+    position: relative;
+    margin-top: $spacer2x;
+
+    .contact-form {
+        @include flex-justify-center-column();
+        background-color: $white;
+        width: 100%;
+        gap: $spacer2x;
+        padding: $spacer;
+
+        input, textarea {
+            font-family: $fontFamily-subTitle;
+            outline: 0;
+            border: 0;
+            width: 100%;
+            padding: $spacer1_2;
+            border-bottom: 1px solid lighten($color: $colorDark, $amount: 60);
+            transition: .3s;
+
+            &:focus {
+                border-bottom: 2px solid lighten($color: $colorDark, $amount: 50);
+            }
+        }
+
+        button {
+            @include btn-primary();
+            align-self: flex-end;
+            background-color: $colorDark;
+            margin-right: -$spacer;
+            border-radius: 0;
+        }
+
+    }
+
+    .distance {
+        color: rgb(220, 0, 0);
+    }
+}
+
+@media screen and (min-width: 769px){
+    .reach-out {
+        grid-template-columns: 4fr 1.5fr;
+        margin: 0 $spacer4x;
+        .google-map {
+            margin: $spacer 0;
+            width: 95%;
+            height: 425px;
+            box-shadow: 10px 10px 15px $colorPrimaryLight;
+        }
+        .contact-form {
+            box-shadow: -10px 5px 10px $colorDarkVariant;
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .reach-out {
+        grid-template-columns: 1fr;
+        row-gap: $spacer2x;
+        margin: 0 $spacer4x;
+        .google-map {
+            width: 100%;
+            height: 350px;
+        }
+    }
+}
+
+@media screen and (max-width: 425px){
+    .reach-out {
+        grid-template-columns: 1fr;
+        row-gap: $spacer2x;
+        margin: 0 $spacer2x;
+        .google-map {
+            width: 100%;
+            height: 350px;
+        }
+    }
+}

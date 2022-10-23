@@ -3,13 +3,9 @@
 .navbar-bottom {
     @include flex-align-center-row();
     border-radius: 0 0 8px 8px;
-    button {
+    .nav-tabs {
         @include flex-center-all-row();
         gap: $spacer1_2;
-    }
-
-    &--sticky {
-        box-shadow: 0 10px 15px #abcdf4;
     }
 }
 
@@ -20,11 +16,12 @@
         width: 100%;
         padding: $spacer $spacer2x;
         background-color: $colorLight;
+        box-shadow: 0px 6px 5px lighten($colorDarkVariant, 20);
         &--navs {
             max-height: 40px;
             display: inline-flex;
             gap: $spacer2x;    
-            button{
+            .nav-tabs{
                 padding: $spacer1_2;
                 padding-bottom: $spacer;        
                 i {
@@ -59,7 +56,7 @@
             justify-items: stretch;
             width: 100%;
             padding: 0 2rem;
-            button{
+            .nav-tabs{
                 @include flex-center-all-column();
                 text-align: center;
                 padding: $spacer1_2;     
@@ -71,6 +68,14 @@
                     transition: .2s linear;
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .navbar-bottom{
+        &--navs {
+            padding: 0;
         }
     }
 }

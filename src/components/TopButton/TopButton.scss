@@ -1,0 +1,40 @@
+@import "../../Constants/constants.scss";
+
+.scroll-up {
+    cursor: pointer;
+    color: $white;
+    padding: $spacer;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #1fa2c3, #29ddf3);
+    position: fixed;
+    z-index: 999;
+    box-shadow: -5px 0px 15px $colorPrimaryLight;
+    transition: all ease-in-out 200ms;
+    pointer-events: auto;
+}
+
+.show {
+    opacity: 1;
+    transition: .2s;
+}
+
+.hide {
+    opacity: 0;
+    transition: .2s;
+}
+
+@media screen and (min-width: 769px) {
+    .scroll-up {
+        right: 0;
+        bottom: 0;
+        margin: $spacer $spacer2x;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .scroll-up {
+        right: 0;
+        bottom: $spacer*5;
+        margin-right: .7rem;
+    }
+}

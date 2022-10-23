@@ -1,15 +1,10 @@
 @import "../../Constants/constants.scss";
 
-.testimonials-carousel {
-    @include flex-center-all-column();
-    gap: $spacer;
-}
-
 .testimonials{
-    @include flex-center-all-row();
-    gap: $spacer2x;
+    padding: $spacer2x 0;
     &__testimonial {
         @include flex-center-all-column();
+        display: flex;
         width: 25%;
         &--header {
             height: 250px;
@@ -17,6 +12,7 @@
             img {
                 max-height: 250px;
                 width: auto;
+                margin: 0 auto;
             }
         }
         &--body {
@@ -30,9 +26,10 @@
 
             p.desc {
                 @include line-clamp(7);
+                font-style: italic;
+                padding: 0 $spacer;
                 background-color: $colorLight;
                 border-radius: 4px;
-                text-align: justify;
             }
 
             .rating {
@@ -55,14 +52,36 @@
     }
 }
 
-.indicator {
-    @include flex-center-all-row();
-    gap: $spacer1_2;
-    span {
-        cursor: pointer;
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background-color: $colorPrimary;
+.slick-slider {
+    margin: 0 $spacer4x;
+}
+
+.slick-slide > div {
+    margin: 0 $spacer;
+}
+
+.slick-list {
+    margin: 0 (-$spacer);
+}   
+
+.slick-prev:before, .slick-next:before {
+    color: $colorDark;
+}
+
+.slick-dots {
+    bottom: initial;
+    margin-bottom: $spacer1_2;
+}
+.slick-dots li {
+    margin: 0;
+
+    button:before{
+        font-size: 8px;
+        color: $colorPrimary;
+    }
+
+    &.slick-active button:before{
+        font-size: 10px;
+        color: $colorPrimaryDark;
     }
 }

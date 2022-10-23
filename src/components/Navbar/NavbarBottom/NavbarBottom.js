@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { CommonData } from '../../../Data/commondata';
 import './NavbarBottom.scss';
 
 function activeNavbar() {
@@ -12,6 +13,7 @@ function activeNavbar() {
                 this.className += " active-nav";
               });
         }
+        
     }else{
         console.error(navs);
     }
@@ -26,34 +28,33 @@ export default function NavbarBottom(){
         [document.getElementById("navs"), document.getElementById("nav-tabs")],
     );
     const isMobileTemp = window.innerWidth <= 768 ? true : false;
-
     return (
         <>
         <div className='navbar-bottom'>
             <div className='navbar-bottom--navs' id='navs' tabIndex="-1">
-                <button type='submit' className='nav-tabs active-nav' tabIndex="=1">
+                <a href="#home" className='nav-tabs active-nav' tabIndex="=1">
                     <i className='uil uil-estate'></i>Home
-                </button>
-                <button type='submit' className='nav-tabs' tabIndex="=1">
+                </a>
+                <a href="#services" className='nav-tabs' tabIndex="=1">
                     <i className='uil uil-estate'></i>Services
-                </button>
-                <button type='submit' className='nav-tabs' tabIndex="=1">
+                </a>
+                <a href="#testimonials" className='nav-tabs' tabIndex="=1">
                     <i className='uil uil-estate'></i>Testimonials
-                </button>
-                <button type='submit' className='nav-tabs' tabIndex="=1">
+                </a>
+                <a href="#about" className='nav-tabs' tabIndex="=1">
                     <i className='uil uil-estate'></i>About
-                </button>
-                <button type='submit' className='nav-tabs' tabIndex="=1">
+                </a>
+                <a href="#reach-out" className='nav-tabs' tabIndex="=1">
                     <i className='uil uil-estate'></i>Reach Out
-                </button>
-                {isMobileTemp ? <button type='submit' className='nav-tabs' tabIndex="-1">
+                </a>
+                {isMobileTemp ? <a href={"tel: +91-" + CommonData[0].contact} className='nav-tabs' tabIndex="-1">
                     <i className='uil uil-phone'></i>Contact
-                </button> : null}
+                </a> : null}
             </div>
-            {!isMobileTemp ? <button className='btn-primary'>
+            {!isMobileTemp ? <a href={"tel: +91-" + CommonData[0].contact} className='btn-primary'>
                 <i className="fas fa-phone"></i>
                 CONTACT
-            </button> : null}
+            </a> : null}
         </div>
         </>
     );

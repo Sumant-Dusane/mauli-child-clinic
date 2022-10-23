@@ -58,3 +58,26 @@
         margin: 0 $spacer2x;
     }
 }
+
+@media screen and (max-width: 425px){
+    .services {
+        margin: $spacer1_1;
+        padding: 0;
+        column-gap: $spacer;
+        &__service {
+            padding: $spacer;
+            gap: $spacer1_2;
+            & img {
+                height: 250px;
+            }
+            & p {
+                font-size: $fontSize-ms;
+            }
+
+            & button {
+                font-size: $fontSize-ms;
+                padding: 5px 10px;
+            }
+        }
+    }
+}

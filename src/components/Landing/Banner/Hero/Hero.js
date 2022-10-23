@@ -1,35 +1,36 @@
 import React from 'react';
+import { BannerPitchesData, HeroData } from '../../../../Data/banner';
 import './Hero.scss';
 
 export default function Hero () {
     return (
         <>
-            <div className="hero">
-                <div className='hero__left-content'>
-                    <div className='hero__left-content title'>
-                        <h1>DR. Taware</h1>
+            {HeroData.map((item) => (
+                <div className="hero" key={item} 
+                    style = {
+                        {
+                            backgroundImage : `url(${item.bannerbg})`,
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'center'
+                        }
+                    }
+                >
+                    <div className='hero__left-content'>
+                        <div className='hero__left-content title'>
+                            <h1>{item.name}</h1>
+                        </div>
+                        <div className='hero__left-content--tagline'>{item.tagline}</div>
                     </div>
-                    <div className='hero__left-content--tagline'>
-                        loremIpsum dolor sit amet, consectetur adipiscing elit errors  et ea rebum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </div>
+                    <div className='hero__right-content'></div>
                 </div>
-                <div className='hero__right-content'>
-                    
-                </div>
-            </div>
+            ))}
             <div className='hero-pitches'>
-                <div className='hero-pitches__pitch'>
-                    <strong className='hero-pitches__pitch--title title'><i className='uil uil-syringe'></i> Best</strong>
-                    <div>loremIpsum dolor sit amet, consectetur adipiscing elit.</div>          
-                </div>
-                <div className='hero-pitches__pitch'>
-                    <strong className='hero-pitches__pitch--title title'><i className='uil uil-syringe'></i> Best</strong>
-                    <div>loremIpsum dolor sit amet, consectetur adipiscing elit.</div>          
-                </div>
-                <div className='hero-pitches__pitch'>
-                    <strong className='hero-pitches__pitch--title title'><i className='uil uil-syringe'></i> Best</strong>
-                    <div>loremIpsum dolor sit amet, consectetur adipiscing elit.</div>          
-                </div>
+                {BannerPitchesData.map((item) => (
+                    <div className='hero-pitches__pitch' key={item}>
+                        <strong className='hero-pitches__pitch--title title'><i className={item.icon}></i> {item.title}</strong>
+                        <div>{item.desc}</div>          
+                    </div>
+                ))}
             </div>
         </>
     );

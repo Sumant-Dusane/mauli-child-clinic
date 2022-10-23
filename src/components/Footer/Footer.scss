@@ -1,0 +1,66 @@
+@import "./../../Constants/constants.scss";
+
+.footer {
+    background-color: $colorDark;
+    &__upper {
+        display: grid;
+        color: $colorLight;
+        align-items: center ;
+        padding: $spacer $spacer2x;
+
+        img {
+            max-height: 70px;
+        }
+
+        .address {
+            @include flex-column();
+            gap: $spacer;
+            span {
+                color: $white;
+                font-size: $fontSize-ls;
+                font-family: $fontFamily-subTitle;
+                i {
+                    color: #acacac;
+                }
+            }
+
+            .google-map {
+                width: 100%;
+            }
+        }
+
+        ul {
+            @include flex-center-all-column();
+            li a{
+                color: $colorLight;
+                cursor: pointer;
+                line-height: 3.4;
+            }
+        }
+    }
+    &__lower {
+        @include flex-align-center-row();
+        color: $white;
+        font-size: $fontSize-ms;
+        padding: $spacer $spacer4x;
+        min-height: 110px;
+    }
+
+}
+
+@media screen and (min-width: 769px) {
+    .footer__upper {
+        grid-template-columns: 1fr 2fr 2fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer__upper {
+        grid-template-columns: 1fr;
+        row-gap: $spacer2x;
+        justify-items: center;
+    }
+    .footer__lower {
+        text-align: center;
+    }
+}

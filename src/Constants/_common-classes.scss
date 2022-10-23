@@ -30,6 +30,8 @@
     cursor: pointer;
     display: inline-flex;
     align-self: center;
+    align-items: center;
+    gap: $spacer1_1;
     color: white;
     background-color: $colorPrimary;
     border-radius: 8px;
