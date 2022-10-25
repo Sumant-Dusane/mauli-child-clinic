@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/mauli-child-clinic/static/css/main.950973e8.css",
+    "main.css": "/mauli-child-clinic/static/css/main.aff07989.css",
     "main.js": "/mauli-child-clinic/static/js/main.9ee25e25.js",
     "static/media/banner.jpeg": "/mauli-child-clinic/static/media/banner.777dd56570897e9f9c3a.jpeg",
     "static/media/slick.svg": "/mauli-child-clinic/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -8,11 +8,11 @@
     "static/media/slick.ttf": "/mauli-child-clinic/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/mauli-child-clinic/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/mauli-child-clinic/index.html",
-    "main.950973e8.css.map": "/mauli-child-clinic/static/css/main.950973e8.css.map",
+    "main.aff07989.css.map": "/mauli-child-clinic/static/css/main.aff07989.css.map",
     "main.9ee25e25.js.map": "/mauli-child-clinic/static/js/main.9ee25e25.js.map"
   },
   "entrypoints": [
-    "static/css/main.950973e8.css",
+    "static/css/main.aff07989.css",
     "static/js/main.9ee25e25.js"
   ]
 }
