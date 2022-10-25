@@ -67,8 +67,9 @@
         &__service {
             padding: $spacer;
             gap: $spacer1_2;
+            min-height: initial;
             & img {
-                height: 250px;
+                height: 160px;
             }
             & p {
                 font-size: $fontSize-ms;
